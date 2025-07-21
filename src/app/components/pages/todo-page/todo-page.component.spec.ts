@@ -76,13 +76,11 @@ describe('TodoPageComponent', () => {
     });
 
     it('should call toggleTask on service when toggleTask is called with valid task ID', () => {
-        const mockEvent = {
-            target: {
-                closest: jasmine.createSpy('closest').and.returnValue({
-                    getAttribute: jasmine.createSpy('getAttribute').and.returnValue('1')
-                })
-            }
-        } as any;
+        const mockClosest = jasmine.createSpy('closest').and.returnValue({
+            getAttribute: jasmine.createSpy('getAttribute').and.returnValue('1')
+        });
+        const mockTarget = { closest: mockClosest } as unknown as EventTarget;
+        const mockEvent = { target: mockTarget } as Event;
 
         component.toggleTask(mockEvent);
 
@@ -90,13 +88,11 @@ describe('TodoPageComponent', () => {
     });
 
     it('should not call toggleTask on service when toggleTask is called without task ID', () => {
-        const mockEvent = {
-            target: {
-                closest: jasmine.createSpy('closest').and.returnValue({
-                    getAttribute: jasmine.createSpy('getAttribute').and.returnValue(null)
-                })
-            }
-        } as any;
+        const mockClosest = jasmine.createSpy('closest').and.returnValue({
+            getAttribute: jasmine.createSpy('getAttribute').and.returnValue('1')
+        });
+        const mockTarget = { closest: mockClosest } as unknown as EventTarget;
+        const mockEvent = { target: mockTarget } as Event;
 
         component.toggleTask(mockEvent);
 

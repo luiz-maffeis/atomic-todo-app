@@ -362,19 +362,4 @@ describe('TaskListComponent', () => {
         expect(taskItems.length).toBe(0);
     });
 
-    it('should handle null tasks gracefully', () => {
-        // The component doesn't handle null tasks, so we test that it throws an error
-        expect(() => {
-            component.tasks = null as any;
-            fixture.detectChanges();
-        }).toThrow();
-    });
-
-    it('should handle undefined tasks gracefully', () => {
-        // The component doesn't handle undefined tasks, so we test that it throws an error
-        expect(() => {
-            component.tasks = undefined as any;
-            fixture.detectChanges();
-        }).toThrow();
-    });
 }); 

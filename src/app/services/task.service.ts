@@ -1,4 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Task } from '../models/task.interface';
 import { isPlatformBrowser } from '@angular/common';
@@ -11,7 +11,9 @@ export class TaskService {
   public tasks$ = this.tasksSubject.asObservable();
   private readonly STORAGE_KEY = 'atomic-todo-tasks';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  private platformId = inject(PLATFORM_ID);
+
+  constructor() {
     if (isPlatformBrowser(this.platformId)) {
       this.loadTasksFromStorage();
     }
@@ -106,7 +108,7 @@ export class TaskService {
   }
 
   private generateId(): string {
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
   }
 
   getCompletedTasksCount(): Observable<number> {

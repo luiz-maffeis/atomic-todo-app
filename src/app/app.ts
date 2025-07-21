@@ -5,9 +5,7 @@ import { TodoPageComponent } from './components/pages/todo-page/todo-page.compon
   selector: 'app-root',
   standalone: true,
   imports: [TodoPageComponent],
-  template: ` <app-todo-page></app-todo-page> `,
+  template: `<app-todo-page></app-todo-page>`,
   styles: [],
 })
-export class AppComponent {
-  title = 'atomic-todo-app';
-}
+export class AppComponent { }

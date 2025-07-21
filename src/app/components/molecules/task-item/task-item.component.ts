@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { Task } from '../../../models/task.interface';
 import { CheckboxComponent } from '../../atoms/checkbox/checkbox.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
@@ -11,7 +10,6 @@ import { InputComponent } from '../../atoms/input/input.component';
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
     CheckboxComponent,
     ButtonComponent,
     InputComponent,

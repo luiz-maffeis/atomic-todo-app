@@ -56,8 +56,8 @@ export class InputComponent implements ControlValueAccessor {
   @Output() blurEvent = new EventEmitter<Event>();
   @Output() focusEvent = new EventEmitter<Event>();
 
-  private onChange = (value: string) => {};
-  private onTouched = () => {};
+  private onChange = (value: string) => { console.log('onChange', value) };
+  private onTouched = () => { };
 
   get inputClasses(): string {
     return `input input--${this.size}`;

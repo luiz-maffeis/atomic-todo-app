@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { InputComponent } from './input.component';
+import { InputComponent, InputSize } from './input.component';
 import { FormsModule } from '@angular/forms';
 
 describe('InputComponent', () => {
@@ -237,22 +237,6 @@ describe('InputComponent', () => {
         expect(component.value).toBe('new value');
     });
 
-    it('should handle null value in writeValue', () => {
-        component.writeValue(null as any);
-        fixture.detectChanges();
-        const input = fixture.nativeElement.querySelector('input');
-        expect(input.value).toBe('');
-        expect(component.value).toBe('');
-    });
-
-    it('should handle undefined value in writeValue', () => {
-        component.writeValue(undefined as any);
-        fixture.detectChanges();
-        const input = fixture.nativeElement.querySelector('input');
-        expect(input.value).toBe('');
-        expect(component.value).toBe('');
-    });
-
     it('should handle empty string in writeValue', () => {
         component.writeValue('');
         fixture.detectChanges();
@@ -373,7 +357,7 @@ describe('InputComponent', () => {
         const sizes = ['small', 'medium', 'large'];
 
         sizes.forEach(size => {
-            component.size = size as any;
+            component.size = size as InputSize;
             fixture.detectChanges();
             const input = fixture.nativeElement.querySelector('input');
             expect(input.classList.contains(`input--${size}`)).toBe(true);

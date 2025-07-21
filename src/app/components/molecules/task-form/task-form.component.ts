@@ -23,7 +23,6 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 
       <div class="task-form__button">
         <app-button
-          type="submit"
           variant="primary"
           [disabled]="!taskName.trim()"
           (action)="addTaskAction()"

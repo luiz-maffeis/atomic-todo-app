@@ -38,9 +38,6 @@ export class TodoPageComponent implements OnInit, OnDestroy {
   tasks: Task[] = [];
   private subscription: Subscription = new Subscription();
 
-  /** Inserted by Angular inject() migration for backwards compatibility */
-  constructor() {}
-
   ngOnInit(): void {
     this.subscription.add(
       this.taskService.tasks$.subscribe((tasks) => {

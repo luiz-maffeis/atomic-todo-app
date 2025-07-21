@@ -1,0 +1,43 @@
+.task-form {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+.task-form__input {
+  flex: 1;
+}
+
+.task-form__button {
+  flex-shrink: 0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .task-form {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .task-form__button {
+    align-self: stretch;
+  }
+}

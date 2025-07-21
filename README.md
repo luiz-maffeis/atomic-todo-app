@@ -109,7 +109,7 @@ export interface Task {
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/luiz-maffeis/atomic-todo-app.git
 cd atomic-todo-app
 ```
 
